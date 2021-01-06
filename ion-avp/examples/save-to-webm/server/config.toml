@@ -1,0 +1,31 @@
+
+[webmsaver]
+# webm output path
+path = "./out/"
+
+[avp.samplebuilder]
+# max late for audio rtp packets
+audiomaxlate = 100
+# max late for video rtp packets
+videomaxlate = 200
+
+[avp.log]
+level = "info"
+
+[avp.webrtc]
+# PLI Cycle defines an interval (ms) on which the AVP will
+# request a keyframe. This PLI request will propogate to the
+# sender. It results in more bandwidth usage but will improve
+# recording quality.
+pliCycle = 1000
+
+# Range of ports that ion accepts WebRTC traffic on
+# Format: [min, max]   and max - min >= 100
+# portrange = [50000, 60000]
+# if sfu behind nat, set iceserver
+# [[avp.webrtc.iceserver]]
+# urls = ["stun:stun.stunprotocol.org:3478"]
+# [[avp.webrtc.iceserver]]
+# urls = ["turn:turn.awsome.org:3478"]
+# username = "awsome"
+# credential = "awsome"
